@@ -1,0 +1,4 @@
+{
+  "ignore": ["./client/"],
+  "watch": [".env", "*.js", "*.hbs", "*.json"]
+}
