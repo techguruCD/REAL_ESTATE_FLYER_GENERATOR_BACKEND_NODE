@@ -13,7 +13,7 @@ app.use(fileUpload())
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(cors())
-
+app.use(express.static(path.join(__dirname, 'client')))
 app.use('/', require('./routes'))
 
 // Handle joi errors
