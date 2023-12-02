@@ -29,6 +29,9 @@ exports.propertyExtendedSearch = (params) => {
       }).catch(err => {
         console.log('error')
         console.log(err)
+        if (err?.response?.status == 429) {
+          reject({message: 'Too Many Request for zillow API. Please update to Pro. Please try again later.'})
+        }
         reject(err)
       })
   })

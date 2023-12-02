@@ -272,7 +272,7 @@ exports.listed = (req, res) => {
         if (!data) throw ({ message: 'No data found' })
         generate(data, info, images)
           .then(results => {
-            res.json(results)
+            res.json({image_urls: results, message:'Generated Successfully.'})
           }).catch(err => {
             console.log('' + err)
             let message = err?.message || 'Please try again later'
@@ -315,7 +315,7 @@ exports.notListed = (req, res) => {
         livingAreaUnits: 'sqft',
         description: req.body.description || ' ',
       }, req.body, images).then(result => {
-        res.json(result)
+        res.json({image_urls: result, message:'Generated Successfully.'})
       }).catch(err => {
         console.log(err)
         return res.status(400).send({ message: 'Please try again later' })
