@@ -27,6 +27,7 @@ const notListed = [
       phoneNumber: Joi.string().min(1).required().label('Phone Number'),
       companyName: Joi.string().min(1).required().label('Company Name'),
       website: Joi.string().min(1).required().label('Website'),
+      price: Joi.number().required().label('Price'),
       bedroom: Joi.number().required().label('Bed Room'),
       bathroom: Joi.number().required().label('Bathroom'),
       squareFeet: Joi.number().required().label('Square'),

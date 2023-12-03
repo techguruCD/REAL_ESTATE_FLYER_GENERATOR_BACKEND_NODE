@@ -294,7 +294,7 @@ exports.notListed = (req, res) => {
   let images = []
   if (req.files?.images) {
     if (Array.isArray(req.files.images)) images = req.files.images
-    else images = [req.files.image]
+    else images = [req.files.images]
   }
   if (!images.length) {
     return res.status(400).send({ message: 'Please select image' })
@@ -312,6 +312,7 @@ exports.notListed = (req, res) => {
         bedrooms: req.body.bedroom,
         bathrooms: req.body.bathroom,
         livingArea: req.body.squareFeet,
+        price: req.body.price,
         livingAreaUnits: 'sqft',
         description: req.body.description || ' ',
       }, req.body, images).then(result => {
